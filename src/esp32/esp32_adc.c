@@ -69,6 +69,7 @@ bool esp32_set_channel_attenuation(int pin, int atten) {
   if (ci == NULL) return false;
 
   ci->atten = (adc_atten_t) atten;
+  esp32_update_channel_settings(ci);
   return true;
 }
 
